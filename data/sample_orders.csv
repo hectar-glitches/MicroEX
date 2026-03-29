@@ -1,0 +1,7 @@
+timestamp,order_id,side,type,symbol,price,quantity
+1,1,buy,limit,AAPL,100.00,10
+2,2,sell,limit,AAPL,101.00,5
+3,3,buy,limit,AAPL,101.00,5
+4,4,sell,limit,AAPL,100.00,10
+5,5,buy,limit,AAPL,99.00,20
+6,6,sell,limit,AAPL,102.00,8
