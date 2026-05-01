@@ -1,71 +1,21 @@
 #include <iostream>
-
-using namespace std;
+#include <map>
+#include <deque>
 
 int main() {
-    char greeting[] = "Hello World";
+  std::map<int, std::string> myMap;
+  myMap[1] = "Hello";
+  myMap[2] = "World";
 
-};
+  // Get the iterator to the first element
+  auto it = myMap.begin();
 
-struct Vector {
-    int sz;
-    double* elem;
-};
+  std::cout << "Pointer" << &(*it) << std::endl;
 
-enum class Color {red, green, blue};
-Color x = Color::red;
+  // Move the iterator to the second element
+  it++;
 
-class Vector {
-    public:
-    Vector(int s) : elem{new double[s]}, sz{s} { }
-    double& operator[](int i) {
-        if (i < 0 || size() <= i) throw out_of_range{"Vector::operator[]"};
-        return elem[i];
-    }
-    int size() {
-        return sz;
-    } 
+  std::cout << "Pointer" << &(*it) << std::endl;
 
-    ~Vector() {delete[] elem;}
-
-    private:
-        int sz;
-        double* elem;
-
-};
-
-class BankAccount {
-    public:
-        BankAccount(string x, int y, double z) {
-            owner = x;
-            accountNumber = y;
-            balance = z;
-        }
-
-        void deposit(double amount) {
-            balance += amount;
-        }
-
-        void withdraw(double amount) {
-            if (amount > balance) {
-                cout << "Insufficient funds" << endl;
-                return;
-            }
-
-            balance -= amount;
-        }
-
-        void display() {
-            cout << "Account owner:" << owner << ".\nBalance:" << balance << ".\nAccount number:" << accountNumber << endl;
-        }
-
-        ~BankAccount() {
-            cout << "Bank account of " << owner << " is being closed." << endl;
-        }
-
-
-    private:
-        string owner;
-        double balance;
-        int accountNumber;
-};
+  return 0;
+}
